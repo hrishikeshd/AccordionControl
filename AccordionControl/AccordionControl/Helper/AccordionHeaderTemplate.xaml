@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<control:ViewUserControl xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:control="clr-namespace:AccordionControl.Helper;assembly=AccordionControl"
+              x:Class="AccordionControl.Helper.AccordionHeaderTemplate">
+  <StackLayout Orientation="Vertical"
+              Spacing="0"
+              x:Name="parentStack" VerticalOptions="FillAndExpand">
+
+    <Grid
+      Padding="8,0,8,0"
+      
+      HeightRequest="42"
+      x:Name="mainGrid"
+      BackgroundColor="#515151">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" ></RowDefinition>
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+
+
+      <Grid  HeightRequest="26"
+             Grid.Row="0"
+             Padding="0,8,0,0"
+             Grid.Column="0">
+        <Image Source="{Binding Image}"
+        VerticalOptions="End"  Aspect="AspectFit" />
+      </Grid>
+
+      <StackLayout Orientation="Horizontal" Grid.Row="0" Grid.Column="1" Padding="8,8,0,0">
+        <Label Text="{Binding HeaderName}"
+               TextColor="White"
+               YAlign="Center"
+               FontFamily="HelveticaNeue"
+               HorizontalOptions="Start" />
+        <Grid Padding="0,3,0,0">
+          <Label Text="{Binding TotalCount}"
+                 HorizontalOptions="End"
+                TextColor="White"
+                 FontFamily="HelveticaNeue" />
+        </Grid>
+      </StackLayout>
+
+
+      <Grid x:Name="expanderGrid"
+         Padding="0,8,0,0"
+         Grid.Row="0" Grid.Column="2"
+         HeightRequest="26"
+         HorizontalOptions="End"
+         VerticalOptions="Center">
+        <Image x:Name="expanderImage">
+          <Image.GestureRecognizers>
+            <TapGestureRecognizer Tapped="ExpanderImageClicked"/>
+          </Image.GestureRecognizers>
+        </Image>
+      </Grid>
+
+    </Grid>
+  </StackLayout>
+</control:ViewUserControl >

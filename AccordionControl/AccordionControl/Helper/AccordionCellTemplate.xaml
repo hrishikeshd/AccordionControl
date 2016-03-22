@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<control:ViewCellUserControl xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:control="clr-namespace:AccordionControl.Helper;assembly=AccordionControl"
+             x:Class="AccordionControl.Helper.AccordionCellTemplate">
+
+  <Grid BackgroundColor="Black"
+        Padding="17,8,12,8">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="Auto" />
+      <ColumnDefinition Width="*" />
+    </Grid.ColumnDefinitions>
+
+    <Label Text="{Binding CellData}"
+           Grid.Row="0"
+           HorizontalOptions="Start"
+           TextColor="White"
+           FontFamily="HelveticaNeue"
+           VerticalOptions="Center"
+           Grid.Column="0" />
+
+    <Label Text ="{Binding CellData2}"
+           Grid.Row="1"
+           TextColor="White"
+           HorizontalOptions="Start"
+           FontFamily="HelveticaNeue"
+           Grid.Column="0" />
+
+    <Image Source="RightArrowIcon.png" HorizontalOptions="End"  VerticalOptions="Center" Grid.RowSpan="2" Grid.Column="1"></Image>
+  </Grid>
+</control:ViewCellUserControl>

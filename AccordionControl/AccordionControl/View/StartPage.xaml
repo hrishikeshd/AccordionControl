@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:accordion ="clr-namespace:AccordionControl.Helper;assembly=AccordionControl"
+             x:Class="AccordionControl.View.StartPage"
+               BackgroundColor="#000000">
+  <Grid  Padding="0"
+            RowSpacing="5"
+            x:Name="accordion" >
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+
+      <RowDefinition Height="*"/>
+
+    </Grid.RowDefinitions>
+    <StackLayout  Grid.Row="0" HeightRequest="40">
+    <Label Text="Accordion Demo" TextColor="White"></Label>
+    </StackLayout>
+    <Grid Grid.Row="1">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="40"/>
+      </Grid.RowDefinitions>
+    </Grid>
+    <accordion:AccordionHeaderTemplate  Grid.Row="2"  BindingContext="{Binding AccordionList}"></accordion:AccordionHeaderTemplate>
+  </Grid>
+</ContentPage>
